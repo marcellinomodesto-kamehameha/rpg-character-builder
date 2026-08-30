@@ -27,6 +27,12 @@ import {
         </a>
 
         <a
+          routerLink="/roll/6"
+          routerLinkActive="active">
+          Ability Roller
+        </a>
+
+        <a
           routerLink="/about"
           routerLinkActive="active">
           About

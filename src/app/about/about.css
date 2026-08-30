@@ -1,0 +1,78 @@
+.about-page {
+  min-height: 60vh;
+  padding: 3rem 1rem;
+}
+
+.about-container {
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.about-card {
+  background: #1f1a17;
+  border: 1px solid #4b3a2f;
+  border-radius: 12px;
+  padding: 3rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.about-header {
+  text-align: center;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #4b3a2f;
+}
+
+.about-label {
+  display: block;
+  margin-bottom: 0.75rem;
+  color: #d97706;
+  font-size: 0.8rem;
+  font-weight: bold;
+  letter-spacing: 0.12em;
+}
+
+.about-header h1 {
+  margin: 0 0 1rem;
+  color: #f3f4f6;
+  font-size: 2.5rem;
+}
+
+.about-intro {
+  margin: 0;
+  color: #d1d5db;
+  font-size: 1.1rem;
+}
+
+.about-content {
+  padding-top: 2rem;
+}
+
+.about-content h2 {
+  margin-top: 0;
+  color: #f3f4f6;
+}
+
+.about-content h2:not(:first-child) {
+  margin-top: 2rem;
+}
+
+.about-content p {
+  color: #d1d5db;
+  line-height: 1.7;
+}
+
+.about-content ul {
+  padding-left: 1.5rem;
+  color: #d1d5db;
+  line-height: 2;
+}
+
+@media (max-width: 600px) {
+  .about-card {
+    padding: 2rem 1.25rem;
+  }
+
+  .about-header h1 {
+    font-size: 2rem;
+  }
+}

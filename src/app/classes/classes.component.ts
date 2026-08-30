@@ -4,7 +4,7 @@ import { RouterLink } from '@angular/router';
 import { CharacterClass } from '../models/character-class';
 
 @Component({
-  selector: 'app-classes',
+  selector: 'classes-page',
   imports: [RouterLink],
   templateUrl: './classes.html',
   styleUrl: './classes.css',

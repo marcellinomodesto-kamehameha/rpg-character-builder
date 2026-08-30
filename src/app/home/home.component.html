@@ -1,17 +1,33 @@
-<section data-testid="home-page">
-  <h1>{{ pageTitle }}</h1>
+<section class="w4-container">
+  <div class="w4-panel-feature">
+    <h1>{{ pageTitle }}</h1>
 
-  <h2>Design a character</h2>
+    <p class="w4-feature-copy">
+      Design a character and prepare for your next adventure.
+    </p>
 
-  <p>Choose a class, establish abilities, and record a profile.</p>
+    <h2>Design a Character</h2>
 
-  <h3>Character-building features</h3>
+    <p>
+      Choose a class, establish abilities, and record a profile.
+    </p>
 
-  <ul data-testid="character-features">
-    <li>Browse character classes</li>
-    <li>Roll ability scores</li>
-    <li>Create and save a character profile</li>
-  </ul>
+    <h3>Character-Building Features</h3>
 
-  <h4>Begin your adventure</h4>
+    <ul>
+      <li>Browse character classes</li>
+      <li>Roll ability scores</li>
+      <li>Create and save a character profile</li>
+    </ul>
+
+    <div class="w4-actions">
+      <a routerLink="/classes" class="w4-btn w4-btn-primary">
+        Browse Classes
+      </a>
+
+      <a routerLink="/roll/6" class="w4-btn">
+        Roll Ability Scores
+      </a>
+    </div>
+  </div>
 </section>
