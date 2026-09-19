@@ -1,0 +1,285 @@
+<section
+  class="w4-container w4-section"
+  aria-labelledby="profile-heading">
+
+  <div class="w4-heading-split">
+
+    <div>
+
+      <p class="w4-eyebrow">
+        CHARACTER PROFILE
+      </p>
+
+      <h1 id="profile-heading">
+        Build Your Character Profile
+      </h1>
+
+    </div>
+
+    <p>
+      Add personality, alignment, skills, and a homeland
+      to your character.
+    </p>
+
+  </div>
+
+  <div class="w4-grid w4-grid-split">
+
+    <form
+      class="w4-panel w4-form"
+      [formGroup]="profileForm"
+      (ngSubmit)="onSubmit()"
+      data-testid="profile-form">
+
+      <div class="w4-section-heading">
+
+        <div class="w4-icon-circle">
+          01
+        </div>
+
+        <div>
+
+          <h2>
+            Character Details
+          </h2>
+
+          <p>
+            Define your adventurer
+          </p>
+
+        </div>
+
+      </div>
+
+      <div class="w4-field">
+
+        <label for="backstory">
+          Backstory
+        </label>
+
+        <textarea
+          id="backstory"
+          formControlName="backstory"
+          class="w4-control"
+          data-testid="backstory"
+          placeholder="Tell us about your character...">
+        </textarea>
+
+      </div>
+
+      <fieldset
+        data-testid="alignment-group"
+        class="w4-form-section">
+
+        <legend>
+          Alignment
+        </legend>
+
+        <div class="w4-choice-grid">
+
+          @for (
+            alignment of alignments;
+            track alignment.id
+          ) {
+
+            <label class="w4-choice-card">
+
+              <input
+                type="radio"
+                formControlName="alignment"
+                [value]="alignment.id">
+
+              <span>
+                <strong>
+                  {{ alignment.label }}
+                </strong>
+              </span>
+
+            </label>
+
+          }
+
+        </div>
+
+      </fieldset>
+
+      <fieldset
+        formArrayName="skillOptions"
+        data-testid="skill-options"
+        class="w4-form-section">
+
+        <legend>
+          Skills
+        </legend>
+
+        <div class="w4-choice-grid">
+
+          @for (
+            skill of skills;
+            track skill.id;
+            let i = $index
+          ) {
+
+            <label class="w4-choice-card">
+
+              <input
+                type="checkbox"
+                [formControlName]="i">
+
+              <span>
+                <strong>
+                  {{ skill.label }}
+                </strong>
+              </span>
+
+            </label>
+
+          }
+
+        </div>
+
+      </fieldset>
+
+      <div class="w4-field">
+
+        <label for="homeland">
+          Homeland
+        </label>
+
+        <select
+          id="homeland"
+          formControlName="homeland"
+          class="w4-control"
+          data-testid="homeland">
+
+          <option value="">
+            Choose a homeland
+          </option>
+
+          @for (
+            homeland of homelands;
+            track homeland.id
+          ) {
+
+            <option [value]="homeland.id">
+              {{ homeland.label }}
+            </option>
+
+          }
+
+        </select>
+
+      </div>
+
+      <div class="w4-actions w4-mt-4">
+
+        <button
+          type="submit"
+          class="w4-btn w4-btn-primary"
+          data-testid="profile-submit"
+          [disabled]="!formIsValid">
+
+          Save Profile
+
+        </button>
+
+      </div>
+
+    </form>
+
+    <section class="w4-panel">
+
+      <div class="w4-section-heading">
+
+        <div class="w4-icon-circle">
+          02
+        </div>
+
+        <div>
+
+          <h2>
+            Saved Profiles
+          </h2>
+
+          <p>
+            Your completed profiles
+          </p>
+
+        </div>
+
+      </div>
+
+      <div
+        data-testid="profile-list"
+        class="w4-stack">
+
+        @if (profiles.length === 0) {
+
+          <div class="w4-empty-state">
+
+            <div class="w4-empty-icon">
+              +
+            </div>
+
+            <h3>
+              No profiles yet
+            </h3>
+
+            <p>
+              Complete the form to save your first character profile.
+            </p>
+
+          </div>
+
+        } @else {
+
+          @for (
+            profile of profiles;
+            track $index
+          ) {
+
+            <article class="w4-review-card">
+
+              <div class="w4-item-heading">
+
+                <strong>
+                  {{ profile.homeland }}
+                </strong>
+
+                <span class="w4-badge">
+                  {{ profile.alignment }}
+                </span>
+
+              </div>
+
+              <div class="w4-detail-list">
+
+                <p>
+                  <span>Skills</span>
+                  <strong>
+                    {{ profile.skills.join(', ') }}
+                  </strong>
+                </p>
+
+                <p>
+                  <span>Backstory</span>
+                  <strong>
+                    {{ profile.backstory }}
+                  </strong>
+                </p>
+
+              </div>
+
+            </article>
+
+          }
+
+        }
+
+      </div>
+
+    </section>
+
+  </div>
+
+</section>

@@ -1,0 +1,139 @@
+<section
+  class="w4-container w4-grid w4-grid-auth"
+  aria-labelledby="signin-heading">
+
+  <div class="w4-auth-intro">
+
+    <p class="w4-eyebrow">
+      WELCOME BACK
+    </p>
+
+    <h1 id="signin-heading">
+      Sign in and continue your adventure.
+    </h1>
+
+    <p>
+      Enter your username and access code to continue
+      to the RPG Character Builder.
+    </p>
+
+  </div>
+
+  <div class="w4-auth-panel">
+
+    <form
+      id="signin-form"
+      data-testid="signin-form"
+      class="w4-panel w4-form"
+      [formGroup]="signinForm"
+      (ngSubmit)="submit()"
+      novalidate>
+
+      <div class="w4-section-heading">
+
+        <div class="w4-icon-circle">
+          →
+        </div>
+
+        <div>
+
+          <h2>
+            Sign In
+          </h2>
+
+          <p>
+            Access your character tools
+          </p>
+
+        </div>
+
+      </div>
+
+      <div class="w4-field">
+
+        <label for="username">
+          Username
+        </label>
+
+        <input
+          id="username"
+          data-testid="username"
+          type="text"
+          class="w4-control"
+          formControlName="username"
+          autocomplete="username"
+          aria-describedby="username-error">
+
+        @if (username.invalid && username.touched) {
+
+          <div
+            id="username-error"
+            data-testid="username-error"
+            class="w4-error"
+            role="alert">
+
+            Username must be at least 3 characters.
+
+          </div>
+
+        }
+
+      </div>
+
+      <div class="w4-field">
+
+        <label for="access-code">
+          Access Code
+        </label>
+
+        <input
+          id="access-code"
+          data-testid="access-code"
+          type="text"
+          class="w4-control"
+          formControlName="accessCode"
+          autocomplete="off"
+          maxlength="6"
+          aria-describedby="access-code-error">
+
+        @if (accessCode.invalid && accessCode.touched) {
+
+          <div
+            id="access-code-error"
+            data-testid="access-code-error"
+            class="w4-error"
+            role="alert">
+
+            Access code must contain exactly
+            6 letters or numbers.
+
+          </div>
+
+        }
+
+      </div>
+
+      <div class="w4-actions w4-mt-4">
+
+        <button
+          id="signin-submit"
+          data-testid="signin-submit"
+          class="w4-btn w4-btn-primary w4-btn-block"
+          type="submit">
+
+          Sign In
+
+        </button>
+
+      </div>
+
+      <p class="w4-field-hint">
+        Enter your username and six-character access code
+        to continue.
+      </p>
+
+    </form>
+
+  </div>
+
+</section>

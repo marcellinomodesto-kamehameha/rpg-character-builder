@@ -24,7 +24,7 @@ export class ClassesComponent {
     {
       id: 'archer',
       name: 'Archer',
-      description: 'A marksman trained in the art, sport, or combat skill of archery .'
+      description: 'A marksman trained in the art, sport, or combat skill of archery.'
     }
   ];
 }

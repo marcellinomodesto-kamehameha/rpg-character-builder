@@ -1,35 +1,66 @@
-<section class="classes-page">
-  <div class="classes-container">
+<section
+  class="w4-container w4-section"
+  aria-labelledby="classes-heading">
 
-    <div class="classes-header">
-      <h1>Choose a Character Class</h1>
+  <div class="w4-heading-split">
 
-      <p>
-        Select a class to learn more about its strengths and play style.
+    <div>
+      <p class="w4-eyebrow">
+        CHARACTER CLASSES
       </p>
+
+      <h1 id="classes-heading">
+        Choose your character class
+      </h1>
     </div>
 
-    <div class="class-grid">
-      @for (characterClass of characterClasses; track characterClass.id) {
-        <article class="class-card">
-
-          <div class="class-card-content">
-            <h2>{{ characterClass.name }}</h2>
-
-            <p>
-              {{ characterClass.description }}
-            </p>
-          </div>
-
-          <a
-            [routerLink]="['/classes', characterClass.id]"
-            class="class-button">
-            View Details
-          </a>
-
-        </article>
-      }
-    </div>
+    <p>
+      Each class brings a different approach to an adventure.
+      Pick one to review its role and details before building
+      your character.
+    </p>
 
   </div>
+
+  <div class="w4-grid w4-grid-3">
+
+    @for (
+      characterClass of characterClasses;
+      track characterClass.id
+    ) {
+
+      <article class="w4-card w4-card-tall">
+
+        <div>
+
+          <div class="w4-card-header">
+            <span class="w4-badge">
+              {{ characterClass.id }}
+            </span>
+          </div>
+
+          <h2>
+            {{ characterClass.name }}
+          </h2>
+
+          <p class="w4-card-text">
+            {{ characterClass.description }}
+          </p>
+
+        </div>
+
+        <a
+          [routerLink]="['/classes', characterClass.id]"
+          class="w4-link-arrow">
+
+          View class details →
+
+        </a>
+
+      </article>
+
+    }
+
+  </div>
+
 </section>

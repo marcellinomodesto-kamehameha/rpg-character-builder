@@ -1,12 +1,104 @@
-<section data-testid="class-detail-page">
-  <h1>Character Class Details</h1>
+<section
+  class="w4-container w4-section"
+  data-testid="class-detail-page"
+  aria-labelledby="class-detail-heading">
 
-  <h2>Class Information</h2>
+  <div class="w4-heading-row">
 
-  <p>
-    Route identifier:
-    <span data-testid="class-id">{{ classId }}</span>
-  </p>
+    <div>
 
-  <a routerLink="/classes">Return to classes</a>
+      <p class="w4-eyebrow">
+        CHARACTER CLASS
+      </p>
+
+      <h1 id="class-detail-heading">
+        Character Class Details
+      </h1>
+
+    </div>
+
+    <a
+      routerLink="/classes"
+      class="w4-link-arrow">
+      ← Back to Classes
+    </a>
+
+  </div>
+
+  <div class="w4-grid w4-grid-split">
+
+    <article class="w4-panel">
+
+      <div class="w4-section-heading">
+
+        <div class="w4-icon-circle">
+          01
+        </div>
+
+        <div>
+
+          <h2>
+            Class Information
+          </h2>
+
+          <p>
+            Route information for the selected class
+          </p>
+
+        </div>
+
+      </div>
+
+      <p class="w4-card-text">
+        This page is displaying the character class identified
+        by the route parameter.
+      </p>
+
+      <div class="w4-meta-row">
+
+        <div>
+
+          <span class="w4-meta-label">
+            Route Identifier
+          </span>
+
+          <strong data-testid="class-id">
+            {{ classId }}
+          </strong>
+
+        </div>
+
+      </div>
+
+    </article>
+
+    <aside class="w4-callout">
+
+      <div>
+
+        <p class="w4-kicker">
+          NEXT STEP
+        </p>
+
+        <h2>
+          Ready to build?
+        </h2>
+
+        <p>
+          Continue to the character builder and start creating
+          your adventurer.
+        </p>
+
+      </div>
+
+      <a
+        routerLink="/builder"
+        class="w4-btn w4-btn-primary">
+        Build Character
+      </a>
+
+    </aside>
+
+  </div>
+
 </section>
